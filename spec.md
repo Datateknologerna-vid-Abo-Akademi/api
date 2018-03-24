@@ -31,6 +31,7 @@ Hemsidan, och därav också i förlängningen API:n, borde ge användaren tillg�
 - /posts
   - ger alla posts, med limit y
   - /:id specifik post
+  - JSON, texten själv som plaintext med Markdown markup
 - /events
   - ger alla events, med limit x
   - /:id specifik event
