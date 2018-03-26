@@ -24,16 +24,16 @@ Hemsidan, och därav också i förlängningen API:n, borde ge användaren tillg�
 
 ## RESTfull-ish
 - /pages
-  - ger alla pages, med limit x
+  - ger alla pages, pagination med default limit x
   - en page har subpages i viss kategori (inte nödvändigtvis enligt representation i UI)
   - innehåller enhetliga block som kan användas i UI var det passar
   - /:id specifik page
 - /posts
-  - ger alla posts, med limit y
+  - ger alla posts, pagination med default limit y
   - /:id specifik post
   - JSON, texten själv som plaintext med Markdown markup
 - /events
-  - ger alla events, med limit x
+  - ger alla events, pagination med default limit x
   - /:id specifik event
 - /members (users?)
   - denhär e lite fittigare
