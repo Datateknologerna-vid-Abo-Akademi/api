@@ -68,12 +68,58 @@ Sidor av olika slag på hemsidan med statisk information om föreningen. Helt en
         }
 
 # Group Posts
-
+## Posts [/posts/]
 Inlägg på hemsidan. Sorteras på datum.
+
+## Post [/posts/{post_id}]
+### Hämtar en viss post [GET]
++ Response 200 (application/json)  
+
+        { 
+            "title":  "Prewappen med DaTe och Astérix",
+            "body": "Kommer du inte ihåg fjolårets ...",
+            "event": {
+                id: 1234,
+                href: "uri"                
+                }
+        }
 
 # Group Events
 
 Händelser på den gamla hemsidan. Sitzer etc, med anmälningsformulär beskrivningar osv.
+
+## Events [/events/]
+
+## Event [/event/{event_id}]
+### Hämtar en viss anmälning [GET]
++ Response 200 (application/json)
+
+        {
+            id: 1234,
+            title: Prewappen med DaTe och Astérix,
+            date: "2018-04-28T19:00+02:00",
+            list: [
+                { 
+                    name: "Albin",
+                    email: "date@abo.fi"
+                }, 
+                ...
+            ],
+            reg_form: {
+                name: {
+                    type: String,
+                    required: true
+                },
+                email: {
+                    type: String,
+                    required: true
+                },
+                ätstörning: {
+                    type: String
+                }
+            },
+
+        }
 
 # Group Members
 
