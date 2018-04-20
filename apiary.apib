@@ -1,0 +1,134 @@
+FORMAT: 1A
+
+# DaTeAPI
+
+CRUD-API för att schleppa data mellan databasen och webbsidan.
+
+# Group Pages
+Sidor av olika slag på hemsidan med statisk information om föreningen. Helt enkelt ett JSON-objekt med data om DaTe.
+## Alla pages [/pages]
+### Lista alla pages [GET]
++ Response 200 (application/json)
+
+        { 
+        "meta": {
+                "name": "Datateknologerna vid Åbo Akademi rf",
+                "short": "Datateknologoerna är...",
+                "e-mail": "date@abo.fi",
+                "address": {
+                        "street": "Vattenborgsv. 3",
+                        "zip": "20500",
+                        "city": "Åbo"
+                },
+                "bank": {
+                        "IBAN": "FI31 6601 0003 7474 82",
+                        "BIC": "AABAFI22"},
+                },
+        "org": {
+                "styrelsen": {},
+                "commodore": {},
+                "funkkisar": {
+                        "datörer": [
+                                "Lars Sundman",
+                                "Anton Lindholm",
+                                "Robert Backman",
+                                "Kevin Karlsson"],
+                        "..."},
+                },
+        "man": {
+                "ansökningsguide": {
+                        "updated": "2017-03-27T20:19:00+02:00",
+                        "body": {
+                                "Som studerande kan man ansöka om ..."
+                                },
+                        },
+                "halarguide": {
+                        "updated": "2012-02-01T21:12+02:00",
+                        "body": {
+                                "Teknologerna introducerade studiehalaren ..."
+                                },
+                        },
+                "tofsguiden": ...
+                },
+        "links": ["http://kemistklubben.abo.fi/", ...],   
+        }
+        
+
+## Page [/pages/{page_id}]
+### Hämta just en viss sida [GET]
++ Response 200 (application/json)
+
+        { "page": 
+                {
+                "id": 1337,
+                "title": "Hejhej!",
+                "date": "2018-13-13",
+                "body": "dwalökdjlawdjlaökwdjalöwd"
+                }
+        }
+
+# Group Posts
+## Posts [/posts/]
+Inlägg på hemsidan. Sorteras på datum.
+
+## Post [/posts/{post_id}]
+### Hämtar en viss post [GET]
++ Response 200 (application/json)  
+
+        { 
+            "title":  "Prewappen med DaTe och Astérix",
+            "body": "Kommer du inte ihåg fjolårets ...",
+            "event": {
+                id: 1234,
+                href: "uri"                
+                }
+        }
+
+# Group Events
+
+Händelser på den gamla hemsidan. Sitzer etc, med anmälningsformulär beskrivningar osv.
+
+## Events [/events/]
+
+## Event [/event/{event_id}]
+### Hämtar en viss anmälning [GET]
++ Response 200 (application/json)
+
+        {
+            id: 1234,
+            title: Prewappen med DaTe och Astérix,
+            date: "2018-04-28T19:00+02:00",
+            list: [
+                { 
+                    name: "Albin",
+                    email: "date@abo.fi"
+                }, 
+                ...
+            ],
+            reg_form: {
+                name: {
+                    type: String,
+                    required: true
+                },
+                email: {
+                    type: String,
+                    required: true
+                },
+                ätstörning: {
+                    type: String
+                }
+            },
+
+        }
+
+# Group Members
+
+Medlemshantering.
+
+# Group Assets
+
+Statiska filer, bl.a. sitzbilder och tenter.
+
+# Group r
+
+Vem vet?
